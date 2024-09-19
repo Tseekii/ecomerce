@@ -1,7 +1,3 @@
-"use client";
-
-import { useContext, useState } from "react";
-
 export const Header = () => {
   return (
     <header className="">
