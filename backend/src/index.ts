@@ -10,6 +10,7 @@ import e from "express";
 import { generateHtmlTemplate } from "./utils/generateHtmlTemplate";
 
 const PORT = process.env.PORT;
+const MONGO_URI = process.env.MONGO_URI || "";
 
 //express application oject uusgeh
 const app = express();
@@ -32,7 +33,7 @@ app.get("/", async (req: Request, res: Response) => {
   res.send("Welcome to com web");
 });
 
-connectDB();
+connectDB(MONGO_URI);
 //server  asaah
 app.listen(PORT, () => {
   console.log(`сервер localhost: ${PORT} ажиллаж байна`);

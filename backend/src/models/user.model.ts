@@ -58,6 +58,8 @@ const userSchema = new Schema<IUser>({
 
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
+    // this bol schema modified oorchlogdson eseh gsn function dotroo password gsn talbariig bichne.
+    // yagaad modified ooroo nadad password gsn hit bgaa tuuniig oorchlogdson esehiig shalgadag
     next();
   } else {
     const hashedPassword = bcrypt.hashSync(this.password.toString(), 10);
