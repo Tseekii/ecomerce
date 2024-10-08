@@ -1,10 +1,9 @@
 "use client";
 import { Heart, Search, ShoppingCart } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { useUser } from "@/provider/user-provier";
+import { useUser } from "./provider/user-provider";
 
 export const Header = () => {
   const { user } = useUser();
@@ -12,8 +11,13 @@ export const Header = () => {
   return (
     <header className="flex items-center justify-between bg-black px-4 py-4 text-white text-sm">
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-1">
-          <Image src="/logo.svg" alt="logo" width={32} height={27} />
+        <div className="flex items-center gap-4">
+          <img
+            src="/images/EcommerceLogo.png"
+            alt="logo"
+            width={62}
+            height={50}
+          />
           <Link href="/">
             <span className="text-white-primary">ECOMMERCE</span>
           </Link>
@@ -36,10 +40,15 @@ export const Header = () => {
         />
       </div>
       <div className="flex items-center gap-3">
-        <Heart color="white" className="mr-3" size={20} strokeWidth={1} />
-        <ShoppingCart
+        <img
+          src="/images/Heart.png"
+          className="mr-3"
+          size={20}
           strokeWidth={1}
-          color="white"
+        />
+        <img
+          src="/images/shopping-cart.png"
+          strokeWidth={1}
           className="mr-3"
           size={20}
         />
