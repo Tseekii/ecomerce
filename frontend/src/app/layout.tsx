@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
-import UserProvider from "./provider/user-provier";
+import UserProvider from "@/components/provider/user-provider";
 
 const inter = Inter({
   subsets: ["latin"],
