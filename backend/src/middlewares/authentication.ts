@@ -1,20 +1,14 @@
 import { Request, Response, NextFunction } from "express";
 import { decodeToken } from "../utils/jwt";
 
-// interface IMyRequest extends Request {
-//   user: string | object;
-// }
-
-declare global {
-  namespace Express {
-    interface Request {
-      user: any;
-    }
-  }
+interface IMyRequest extends Request {
+  //ImyReguiest udamshuulj avsan interfeis eer dotot ni bgaa
+  user: string | object;
 }
 
+import { decodeToken } from "../utils/jwt";
 export const authentication = (
-  req: Request,
+  req: IMyRequest,
   res: Response,
   next: NextFunction
 ) => {
